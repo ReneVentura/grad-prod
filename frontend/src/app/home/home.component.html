@@ -1,0 +1,49 @@
+
+
+<form (submit)="uploadFile($event)">
+  <div>
+  <h2>Suba su imagen</h2>
+  <input type="file" (change)="onFileSelected($event)" accept=".jpg,.jpeg,.png"/>
+  </div>
+  <!-- Radio button set 1 -->
+  <div style="display: flex; flex-direction: column;">
+    <h2>Ingrese el Genero que desea</h2>
+    
+    <label><input type="radio" name="genero" value="romantic" (change)="onRadioSelected($event, 'genero')">romantic</label>
+    <label><input type="radio" name="genero" value="gothic" (change)="onRadioSelected($event, 'genero')">gothic</label>
+    <label><input type="radio" name="genero" value="Option3" (change)="onRadioSelected($event, 'genero')">fantastic-realism</label>
+  </div>
+
+  <!-- Radio button set 2 -->
+  <div style="display: flex; flex-direction: column;">
+    <h2>Ingrese la inspiracion que desea</h2>
+    <label><input type="radio" name="inspiracion" value="Romanticism" (change)="onRadioSelected($event, 'inspiracion')">Romanticism</label>
+    <label><input type="radio" name="inspiracion" value="Realism" (change)="onRadioSelected($event, 'inspiracion')"> Realism </label>
+    <label><input type="radio" name="inspiracion" value="Naturalism" (change)="onRadioSelected($event, 'inspiracion')">Naturalism</label>
+  </div>
+
+  <!-- Radio button set 3 -->
+  <div style="display: flex; flex-direction: column;">
+    <h2>Ingrese el tipo de literatura que desea que desea</h2>
+
+    <label><input type="radio" name="tipo" value="fable" (change)="onRadioSelected($event, 'tipo')">fable</label>
+    <label><input type="radio" name="tipo" value="story" (change)="onRadioSelected($event, 'tipo')">story</label>
+    <label><input type="radio" name="tipo" value="poem" (change)="onRadioSelected($event, 'tipo')">poem</label>
+  </div>
+  <div style="display: flex; flex-direction: column;">
+    <h2 for="numericInput">Ingrese un número (max 500):</h2>
+    <input style="width: 20%;" type="number" id="numericInput" name="numericInput" (change)="onNumericInput($event)" min="0" max="500" maxlength="3" />
+  </div>
+
+  <button type="submit">Upload</button>
+</form>
+<div>
+  <button (click)="sendData()">Enviar</button>
+</div>
+<div *ngIf="uploaded">
+  <p>Generacion de {{data['tipo']}} con éxito.</p>
+  <div>
+    <h1>{{res['message']}}</h1>
+  </div>
+</div>
+
