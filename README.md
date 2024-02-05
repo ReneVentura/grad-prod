@@ -13,7 +13,7 @@ Este proyecto es una demostración de implementación del API en un Web App crea
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/ReneVentura/grad-prod
 ```
 
 Go to the project directory
